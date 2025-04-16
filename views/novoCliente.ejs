@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Adicionar Novo Cliente</h2>
+    </div>
+    <div class="card-body">
+      <form action="/clientes/novo" method="POST">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="cpf" class="form-label">CPF:</label>
+          <input type="text" class="form-control" id="cpf" name="cpf" required>
+        </div>
+        <div class="mb-3">
+          <label for="endereco" class="form-label">Endereço:</label>
+          <input type="text" class="form-control" id="endereco" name="endereco" required>
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar Cliente</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
+    

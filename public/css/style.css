@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'WindowsRetro';
+    src: url('/fonts/Windows.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    background: linear-gradient(135deg, #2C003E, #FF00FF, #00FFFF);
+    color: #FFFFFF;
+    font-family: 'WindowsRetro';
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  header {
+    background-color: #2C003E;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); /* Efeito de brilho no header */
+  }
+  
+  header h1 {
+    color: #FFFFFF !important;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  }
+
+  .navbar {
+    background-color: #2C003E !important; /* Roxo escuro */
+    border-bottom: 2px solid #FF00FF !important; /* Neon Pink */
+    box-shadow: 0 0 15px #FF00FF !important; /* Efeito neon */
+  }
+
+  .navbar .nav-link {
+    color: #FFFFFF !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 255, 255, 0.8);
+    padding: 15px;
+  }
+
+  .navbar .nav-link:hover {
+    background-color: #FF00FF !important;
+    color: #000000 !important;
+    text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.8);
+  }
+
+  .navbar .navbar-brand img {
+    width: 50px;
+    height: auto;
+    filter: hue-rotate(120deg); /* Dá um efeito de alteração de cores */
+  }
+
+  /* Botão do menu */
+.navbar-toggler {
+    background-color: #00FFFF !important;
+    border: 2px solid #FF00FF !important;
+  }
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    color: #000;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+.navbarlogo, .logo {
+    width: 40px;
+    height: auto;
+}
+
+.indexitens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2rem 0;
+}
+
+.indexitens h1 {
+   
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.indexitens hr {
+    height: 2px;
+    background-color: #333; /* Substitui 'color' por 'background-color' */
+    border: none;
+    width: 100vw;
+}
+
+.indexitens img {
+    max-width: 100%;
+    width: 20rem; 
+}
+
+.iconeproduto {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    padding: 5px;
+
+}
+
+footer {
+    background-color: #2C003E;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+  }
+
+  .table {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #FF00FF;
+  }
+
+  .table thead {
+    background-color: #FF00FF;
+    color: #000000;
+  }
+
+  .table tr:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+  }
+  .table .btn {
+    background-color: #92ff71;
+    color: #000000;
+    border: none;
+  }
+
+  .table .btn:hover {
+    background-color: #8688ff;
+    color: #000000;
+    text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.8);
+  }
+  .form-control:focus {
+    border-color: #00FFFF;
+    box-shadow: 0 0 0 0.25rem rgba(0, 255, 255, 0.25);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+}
+
+.card {
+    border: 1px solid #FF00FF;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: #8688ff !important;
+    transition: all 0.3s ease;
+}
+
+form.novo_produto-form {
+  background-color: #121212;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #7f00ff;
+  box-shadow: 0 0 12px #7f00ff55;
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+form.novo_produto-form label {
+  color: #ff80ff;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form.novo_produto-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #1e1e1e;
+  border: 1px solid #7f00ff;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+form.novo_produto-form input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 8px #00ffff77;
+  background-color: #262626;
+}
+
+form.novo_produto-form button {
+  background-color: #7f00ff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 100%;
+}
+
+form.novo_produto-form button:hover {
+  background-color: #ff00ff;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+form.novo_produto-form small {
+  color: #ccc;
+  font-size: 12px;
+}

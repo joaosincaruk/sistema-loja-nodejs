@@ -1,0 +1,54 @@
+<%- include ('partials/header.ejs') %> 
+<%- include ('partials/navbar.ejs') %> 
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>Controle de Estoque</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-sm table-hover">
+            <thead class="bg-info text-white">
+          <tr>
+            <th></th>
+            <th>Produto</th>
+            <th>Quantidade Atual</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% produtos.forEach(produto => { %>
+            <tr>
+              <td style="text-align: center;">
+                <img src="/images/<%= produto.imagem %>" alt="<%= produto.nome %>" class="iconeproduto">
+              </td>
+              <td><%= produto.nome %></td>
+              <td><%= produto.quantidade %></td>
+
+              <!-- Entrada -->
+              <td>
+                <form action="/estoque/<%= produto.id %>?_method=PUT" method="POST" class="d-flex">
+                  <input type="hidden" name="operacao" value="entrada">
+                  <input type="number" name="valor" class="form-control me-2" min="1" required>
+                  <button type="submit" class="btn btn-success btn-sm">+</button>
+                </form>
+              </td>
+
+              <!-- Saída -->
+              <td>
+                <form action="/estoque/<%= produto.id %>?_method=PUT" method="POST" class="d-flex">
+                  <input type="hidden" name="operacao" value="saida">
+                  <input type="number" name="valor" class="form-control me-2" min="1" required>
+                  <button type="submit" class="btn btn-danger btn-sm">-</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>

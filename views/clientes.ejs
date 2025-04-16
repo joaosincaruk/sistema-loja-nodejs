@@ -1,0 +1,34 @@
+<%- include ('partials/header.ejs') %> 
+<%- include ('partials/navbar.ejs') %> 
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Clientes</h1>
+        </div>
+        <div class="card-body">
+            <a href="/clientes/novo" class="btn btn-primary mb-3">Novo Cliente</a>
+        
+            <table class="table table-bordered table-hover">
+                <thead class="bg-info text-white">
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Endereço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% clientes.forEach(cliente =>  { %> 
+                      <tr>
+                        <td><%= cliente.nome %></td>
+                        <td><%= cliente.cpf %></td>
+                        <td><%= cliente.endereco %></td>
+                      </tr>
+                    <% }) %> 
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs') %> 

@@ -1,0 +1,52 @@
+<%- include ('partials/header.ejs') %> 
+<%- include ('partials/navbar.ejs') %> 
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Produtos</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-info text-white">
+                    <tr>
+                        <th></th>
+                        <th>Nome:</th>
+                        <th>Preço: </th>
+                        <th>categoria: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% produtos.forEach(produto =>  { %> 
+                      <tr>
+                        <form action="/produtos/<%= produto.id %>?_method=PUT" method="POST">
+                          <td style="text-align: center;">
+                            <img src="/images/<%= produto.imagem %>" alt="<%= produto.nome %>" class="iconeproduto">
+                          </td>    
+                          <td>
+                            <input type="text" name="nome" value="<%= produto.nome %>" class="form-control" required>
+                          </td>
+                          <td>
+                            <input type="number" step="0.01" name="preco" value="<%= produto.Preço %>" class="form-control" required>
+                          </td>
+                          <td>
+                            <input type="text" name="categoria" value="<%= produto.categoria %>" class="form-control" required>
+                          </td>
+                          <td>
+                            <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                          </td>
+                        </form>
+                      </tr>
+                    <% }) %> 
+                  </tbody>
+                  
+                  
+            </table>
+            
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %> 
+
+

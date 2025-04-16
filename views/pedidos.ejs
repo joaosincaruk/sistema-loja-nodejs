@@ -1,0 +1,52 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>Pedidos</h1>
+    </div>
+    <div class="card-body">
+      <h3>Adicionar Novo Pedido</h3>
+      <form action="/pedidos" method="POST">
+        <div class="form-group">
+          <label for="produtoId">Produto</label>
+          <select name="produtoId" id="produtoId" class="form-control" required>
+            <% produtos.forEach(produto => { %>
+              <option value="<%= produto.id %>"><%= produto.nome %> - R$ <%= produto.Preço %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantidade">Quantidade</label>
+          <input type="number" name="quantidade" id="quantidade" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Adicionar Pedido</button>
+      </form>
+
+      <h3 class="mt-4">Lista de Pedidos</h3>
+      <table class="table table-bordered table-hover">
+        <thead class="bg-info text-white">
+          <tr>
+            <th>Número do Pedido</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pedidos.forEach(pedido => { %>
+            <tr>
+              <td><%= pedido.numeroPedido %></td>
+              <td><%= pedido.produto %></td>
+              <td><%= pedido.quantidade %></td>
+              <td>R$ <%= pedido.valorTotal %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>
